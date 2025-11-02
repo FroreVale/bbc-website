@@ -13,3 +13,7 @@
   --font-sans: var(--font-reith-sans);
   --font-serif: var(--font-reith-serif);
 }
+
+body {
+  @apply bg-background font-sans text-primary
+}
