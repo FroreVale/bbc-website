@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${reithSans.variable} ${reithSerif.variable} antialiased`}
+        className={`${reithSans.variable} ${reithSerif.variable} antialiased bg-background font-sans text-primary`}
       >
         {children}
       </body>
