@@ -48,18 +48,30 @@ export default function Home() {
           </div>
         </header>
         <nav
-          className={`flex justify-center border-b border-border ${
-            isScrolled ? "hidden" : ""
-          } transition-all ease-in-out duration-500`}
+          className={`overflow-hidden transition-all duration-500 ease-in-out
+  ${
+    isScrolled
+      ? "max-h-0 opacity-0 -translate-y-2"
+      : "max-h-16 opacity-100 translate-y-0"
+  }
+  flex justify-center border-b border-border bg-white
+`}
         >
           <div className="flex">
-            {categories.map((item) => {
-              return (
-                <Link key={item.name} href={item.link}>
-                  <CategoryButton onClick={() => setSelectedCategory(item.name)} className={`py-3 px-2 font-medium text-sm hover:bg-border hover:cursor-pointer ${selectedCategory === item.name ? "border-b-[3px] pb-[9px] border-black" : ""}`}>{item.name}</CategoryButton>
-                </Link>
-              );
-            })}
+            {categories.map((item) => (
+              <Link key={item.name} href={item.link}>
+                <CategoryButton
+                  onClick={() => setSelectedCategory(item.name)}
+                  className={`py-3 px-2 font-medium text-sm hover:bg-border hover:cursor-pointer ${
+                    selectedCategory === item.name
+                      ? "border-b-[3px] pb-[9px] border-black"
+                      : ""
+                  }`}
+                >
+                  {item.name}
+                </CategoryButton>
+              </Link>
+            ))}
           </div>
         </nav>
       </div>
