@@ -4,12 +4,14 @@
   --background: #ffffff;
   --primary: #000000;
   --secondary: #202224;
+  --border: #e6e8ea
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-border: var(--border);
   --font-sans: var(--font-reith-sans);
   --font-serif: var(--font-reith-serif);
 }
