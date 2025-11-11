@@ -49,13 +49,13 @@ export default function Home() {
         </header>
         <nav
           className={`overflow-hidden transition-all duration-500 ease-in-out
-  ${
-    isScrolled
-      ? "max-h-0 opacity-0 -translate-y-2"
-      : "max-h-16 opacity-100 translate-y-0"
-  }
-  flex justify-center border-b border-border bg-white
-`}
+            ${
+              isScrolled
+                ? "max-h-0 opacity-0 -translate-y-2"
+                : "max-h-16 opacity-100 translate-y-0"
+            }
+            hidden md:flex justify-center border-b border-border
+          `}
         >
           <div className="flex">
             {categories.map((item) => (
