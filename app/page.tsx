@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="fixed top-0 w-full z-50">
+      <div className="fixed top-0 w-full z-50 bg-background">
         <header
           className={`${
             isScrolled ? "h-16" : "h-20"
@@ -41,7 +41,7 @@ export default function Home() {
             <div className="flex-1">
               <ProfileLogo className="sm:hidden flex justify-end" />
               <div className="hidden sm:flex items-center justify-end gap-5">
-                <Button className="bg-black text-white">Register</Button>
+                <Button className="bg-primary text-background">Register</Button>
                 <Button>Sign In</Button>
               </div>
             </div>
@@ -75,7 +75,11 @@ export default function Home() {
           </div>
         </nav>
       </div>
-      <div className="h-[10000]"></div>
+      <main className="pt-24 bg-background">
+        <div className="h-[1000px]">
+          <p className="text-center mt-10 text-lg">Hey chat!</p>
+        </div>
+      </main>
     </>
   );
 }
