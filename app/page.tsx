@@ -40,7 +40,7 @@ export default function Home() {
             <BBCLogo className="flex-1 flex justify-center items-center h-[73%] transition-all duration-500 ease-in-out" />
             <div className="flex-1">
               <ProfileLogo className="sm:hidden flex justify-end" />
-              <div className="hidden  sm:flex items-center justify-end gap-5">
+              <div className="hidden sm:flex items-center justify-end gap-5">
                 <Button className="bg-black text-white">Register</Button>
                 <Button>Sign In</Button>
               </div>
