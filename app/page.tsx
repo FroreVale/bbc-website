@@ -75,9 +75,12 @@ export default function Home() {
           </div>
         </nav>
       </div>
-      <main className="pt-24 bg-background">
-        <div className="h-[1000px]">
-          <p className="text-center mt-10 text-lg">Hey chat!</p>
+      <main className="pt-32 bg-background">
+        <div className="min-h-[1000px]">
+          <div className="text-center text-4xl font-bold py-4 text-red-700">
+            NEWS
+          </div>
+          <div></div>
         </div>
       </main>
     </>
