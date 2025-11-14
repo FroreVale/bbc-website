@@ -5,7 +5,7 @@ export default function SortSearchIcon({
 }: React.ComponentProps<"svg">) {
   return (
     <div className={cn(className)}>
-      <svg width={50} height={30} fill="none" viewBox="0 0 80 48">
+      <svg width={50} height={30} fill="none" className="hover:bg-border" viewBox="0 0 80 48">
         <path
           fill="currentColor"
           fillRule="evenodd"
