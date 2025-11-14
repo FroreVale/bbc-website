@@ -4,7 +4,7 @@ export default function BBCLogo({className}: React.ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 32 32"
+      viewBox="0 0 112 32"
       className={cn(className)}
     >
       <title>{"British Broadcasting Corporation"}</title>

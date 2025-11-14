@@ -96,7 +96,7 @@ export default function Home() {
           {/* Breaking News */}
           <div className="grid grid-cols-[3fr_1fr] grid-rows-2 gap-x-4 gap-y-8 max-w-7xl mx-auto w-full">
             {/* Main News */}
-            <div className="grid grid-cols-[1fr_2fr] gap-x-4 leading-8 mx-4">
+            <div className="grid grid-cols-[1fr_2fr] gap-x-4 leading-8">
               <div className="flex flex-col gap-2 font-serif">
                 <div>
                   <div className="flex items-center float-left gap-1">
