@@ -12,6 +12,7 @@ import Image from "next/image";
 import LiveIcon from "./components/icons/liveIcon";
 import { sideNews } from "@/app/data/sideNews";
 import NewsCard from "@/app/components/ui/news-card";
+import { bottomNews } from "./data/bottonNews";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -145,7 +146,19 @@ export default function Home() {
             </div>
 
             {/* Below Main */}
-            <div className="bg-blue-300"></div>
+            <div className="flex gap-4">
+              {bottomNews.map((news) => (
+                <NewsCard
+                  key={news.id}
+                  title={news.title}
+                  imageUrl={news.imageUrl}
+                  url={news.url}
+                  description={news.description}
+                  category={news.category}
+                  publishedAt={news.publishedAt}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </main>
