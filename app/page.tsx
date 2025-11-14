@@ -10,6 +10,8 @@ import Link from "next/link";
 import CategoryButton from "./components/ui/catetory-button";
 import Image from "next/image";
 import LiveIcon from "./components/icons/liveIcon";
+import { sideNews } from "@/app/data/sideNews";
+import NewsCard from "@/app/components/ui/news-card";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -96,7 +98,7 @@ export default function Home() {
           {/* Breaking News */}
           <div className="grid grid-cols-[3fr_1fr] grid-rows-2 gap-x-4 gap-y-8 max-w-7xl mx-auto w-full px-4">
             {/* Main News */}
-            <div className="grid grid-cols-[1fr_2fr] gap-x-4 leading-8">
+            <div className="group grid grid-cols-[1fr_2fr] gap-x-4 leading-8">
               <div className="flex flex-col gap-2 font-serif">
                 <div>
                   <div className="flex items-center float-left gap-1">
@@ -105,7 +107,7 @@ export default function Home() {
                       LIVE
                     </span>
                   </div>
-                  <h1 className="font-medium text-[28px]">
+                  <h1 className="font-medium text-[28px] group-hover:underline">
                     Calls to release all Epstein files grow as White House says
                     messages about Trump &apos;prove nothing&apos;
                   </h1>
@@ -120,7 +122,7 @@ export default function Home() {
                 <Image
                   alt="A composite image of Donald Trump on the left and Jeffrey Epstein on the right"
                   src="/images/trump.webp"
-                  className="w-full object-cover aspect-video"
+                  className="w-full object-cover aspect-video group-hover:opacity-80"
                   width={1024}
                   height={576}
                 />
@@ -128,7 +130,19 @@ export default function Home() {
             </div>
 
             {/* Side */}
-            <div className="bg-amber-300 row-span-2"></div>
+            <div className="row-span-2 flex flex-col gap-4">
+              {sideNews.map((news) => (
+                <NewsCard
+                  key={news.id}
+                  title={news.title}
+                  imageUrl={news.imageUrl}
+                  url={news.url}
+                  description={news.description}
+                  category={news.category}
+                  publishedAt={news.publishedAt}
+                />
+              ))}
+            </div>
 
             {/* Below Main */}
             <div className="bg-blue-300"></div>

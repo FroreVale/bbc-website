@@ -4,5 +4,5 @@ export interface NewsCard {
   url: string;         
   imageUrl?: string; 
   category?: string;
-  publishedAt?: Date;   
+  publishedAt?: string;   
 }

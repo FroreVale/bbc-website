@@ -6,16 +6,20 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function timeAgo(date: Date | string): string {
-  const now = new Date();
+  if (!date) return "";                        // nothing to show
+
   const past = new Date(date);
-  const diff = (now.getTime() - past.getTime()) / 1000; // seconds
+  if (isNaN(past.getTime())) return "";        // invalid date -> return empty
+
+  const now = new Date();
+  const diff = (now.getTime() - past.getTime()) / 1000;
 
   const units: [number, string][] = [
     [60, "second"],
     [60, "minute"],
-    [24, "hour"],
+    [24, "hr"],
     [7, "day"],
-    [4.34524, "week"],  // approx
+    [4.34524, "week"],
     [12, "month"],
     [Number.POSITIVE_INFINITY, "year"],
   ];
@@ -30,10 +34,11 @@ export function timeAgo(date: Date | string): string {
   }
 
   const rounded = Math.floor(value);
-  const plural = rounded === 1 ? "" : "s";
-
   if (rounded <= 0) return "just now";
+
+  const plural = rounded === 1 ? "" : "s";
   return `${rounded} ${unit}${plural} ago`;
 }
+
 
 
