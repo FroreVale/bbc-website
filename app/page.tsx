@@ -97,10 +97,13 @@ export default function Home() {
           </div>
 
           {/* Breaking News */}
-          <div className="grid grid-cols-[3fr_1fr] grid-rows-2 gap-x-4 gap-y-8 max-w-7xl mx-auto w-full px-4">
+          <div className="grid md:grid-cols-[3fr_1fr] grid-rows-[min-content_minmax(0,1fr)] gap-x-4 gap-y-8 max-w-7xl mx-auto w-full px-4">
+            
             {/* Main News */}
-            <div className="group grid grid-cols-[1fr_2fr] gap-x-4 leading-8">
-              <div className="flex flex-col gap-2 font-serif">
+            <div className="group grid md:grid-cols-[1fr_2fr] gap-4 leading-8">
+
+              {/* Heading */}
+              <div className="order-2 md:order-0 flex flex-col gap-2 font-serif">
                 <div>
                   <div className="flex items-center float-left gap-1">
                     <LiveIcon className="w-[26.7] h-[26.7] text-red-600 " />
@@ -119,11 +122,13 @@ export default function Home() {
                   other files.
                 </p>
               </div>
+
+              {/* Image */}
               <div>
                 <Image
                   alt="A composite image of Donald Trump on the left and Jeffrey Epstein on the right"
                   src="/images/trump.webp"
-                  className="w-full object-cover aspect-video group-hover:opacity-80"
+                  className="order-1 md:order-0 w-full object-cover aspect-video group-hover:opacity-80"
                   width={1024}
                   height={576}
                 />
@@ -146,7 +151,7 @@ export default function Home() {
             </div>
 
             {/* Below Main */}
-            <div className="flex gap-4">
+            <div className="lg:flex grid grid-cols-2 gap-4">
               {bottomNews.map((news) => (
                 <NewsCard
                   key={news.id}
