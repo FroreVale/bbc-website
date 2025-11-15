@@ -14,6 +14,8 @@ import NewsCard from "@/app/components/ui/news-card";
 import PlayIcon from "./components/icons/playIcon";
 import { mostWatched } from "./data/most-watched";
 import { mostRead } from "./data/most-read";
+import DownArrow from "./components/icons/downArrow";
+import { SocialIcon } from "react-social-icons";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -91,7 +93,7 @@ export default function Home() {
 
       {/* Main Body */}
       <main className="pt-20 md:pt-[125px] bg-background">
-        <div className="min-h-[10000px] px-4">
+        <div className="px-4">
           {/* News Heading */}
           <div className="text-center text-4xl font-bold py-4 text-red-700">
             NEWS
@@ -524,7 +526,7 @@ export default function Home() {
             </div>
 
             {/* List of most watched */}
-            <div className="grid grid-flow-col sm:grid-cols-2 sm:grid-rows-5 xl:grid-cols-5 xl:grid-rows-2 font-serif gap-6 sm:gap-4 m-4">
+            <div className="grid grid-flow-col grid-cols-1 grid-rows-10 sm:grid-cols-2 sm:grid-rows-5 xl:grid-cols-5 xl:grid-rows-2 font-serif gap-6 sm:gap-4 m-4">
               {mostRead.map(({ id, title }) => {
                 return (
                   <div
@@ -569,7 +571,9 @@ export default function Home() {
                   </h2>
 
                   <p className="leading-[18px] text-sm">
-                    Josh Hazlewood is ruled out of the first Ashes Test, leaving Australia&apos;s pace bowling seriously depleted for the series opener in Perth.
+                    Josh Hazlewood is ruled out of the first Ashes Test, leaving
+                    Australia&apos;s pace bowling seriously depleted for the
+                    series opener in Perth.
                   </p>
 
                   <div className="flex gap-2 items-center font-sans text-xs leading-3.5 text-muted h-8">
@@ -662,6 +666,130 @@ export default function Home() {
           </section>
         </div>
       </main>
+
+      <hr className="bg-hr h-px mt-[120px] w-full" />
+
+      <footer>
+        <div className="max-w-7xl mx-auto px-4 mt-4 mb-12">
+          {/* BBC Logo */}
+          <div>
+            <BBCLogo className="w-[105px]" />
+          </div>
+
+          {/* Nav Links */}
+          <section className="mt-[29px]">
+            <ol className="flex flex-wrap flex-col sm:flex-row sm:items-center gap-x-4 gap-y-[18px]">
+              {categories.map(({ name }) => (
+                <li key={name} className="font-medium text-sm leading-[18px]">
+                  {name}
+                </li>
+              ))}
+              <li className="font-medium text-sm leading-[18px]">Weather</li>
+              <li className="font-medium text-sm leading-[18px]">BBC Shop</li>
+              <li className="font-medium text-sm leading-[18px]">BritBox</li>
+            </ol>
+          </section>
+
+          {/* Language Button */}
+          <section className="mt-10 sm:mt-5">
+            <button className="bg-border font-medium text-sm px-3 py-1.5 h-11 cursor-pointer">
+              <div className="flex items-center gap-2">
+                <div>BBC in other languages</div>
+                <div>
+                  <DownArrow />
+                </div>
+              </div>
+            </button>
+          </section>
+
+          {/* Social Media Links */}
+          <section className="my-4 pt-4 border-t border-border">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-8">
+              <div className="font-medium">Follow BBC on:</div>
+
+              <div className="flex items-center gap-1">
+                <SocialIcon
+                  url="https://x.com"
+                  bgColor="transparent"
+                  fgColor="#000"
+                  borderRadius="0"
+                  style={{ width: 32, height: 32 }}
+                />
+                <SocialIcon
+                  url="https://facebook.com"
+                  bgColor="transparent"
+                  fgColor="#000"
+                  borderRadius="0"
+                  style={{ width: 32, height: 32 }}
+                />
+                <SocialIcon
+                  url="https://instagram.com"
+                  bgColor="transparent"
+                  fgColor="#000"
+                  borderRadius="0"
+                  style={{ width: 32, height: 32 }}
+                />
+                <SocialIcon
+                  url="https://tiktok.com"
+                  bgColor="transparent"
+                  fgColor="#000"
+                  borderRadius="0"
+                  style={{ width: 32, height: 32 }}
+                />
+                <SocialIcon
+                  url="https://linkedin.com"
+                  bgColor="transparent"
+                  fgColor="#000"
+                  borderRadius="0"
+                  style={{ width: 32, height: 32 }}
+                />
+                <SocialIcon
+                  url="https://youtube.com"
+                  bgColor="transparent"
+                  fgColor="#000"
+                  borderRadius="0"
+                  style={{ width: 32, height: 32 }}
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* Other Links */}
+          <section className="mt-4">
+            <ul className="flex flex-wrap gap-x-3 gap-y-4 text-xs">
+              <li className="hover:underline cursor-pointer">Terms of Use</li>
+              <li className="hover:underline cursor-pointer">
+                Subscription Terms
+              </li>
+              <li className="hover:underline cursor-pointer">About the BBC</li>
+              <li className="hover:underline cursor-pointer">Privacy Policy</li>
+              <li className="hover:underline cursor-pointer">Cookies</li>
+              <li className="hover:underline cursor-pointer">
+                Accessibility Help
+              </li>
+              <li className="hover:underline cursor-pointer">
+                Contact the BBC
+              </li>
+              <li className="hover:underline cursor-pointer">
+                Advertise with us
+              </li>
+              <li className="hover:underline cursor-pointer">
+                Do not share or sell my info
+              </li>
+              <li className="hover:underline cursor-pointer">
+                BBC.com Help & FAQs
+              </li>
+              <li className="hover:underline cursor-pointer">Content Index</li>
+            </ul>
+          </section>
+
+          {/* Ending */}
+          <section className="mt-6">
+
+          <p className="text-xs">Copyright 2025 BBC. All rights reserved. The BBC is not responsible for the content of external sites. <span className="font-bold">Read about our approach to external linking.</span></p>
+          </section>
+        </div>
+      </footer>
     </>
   );
 }
