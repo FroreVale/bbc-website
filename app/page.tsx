@@ -545,6 +545,121 @@ export default function Home() {
               })}
             </div>
           </section>
+
+          {/* Sports */}
+          <section className="my-12 max-w-7xl mx-auto">
+            {/* Header */}
+            <div>
+              <hr className="h-0.5 w-full bg-hr" />
+              <div className="flex mt-2">
+                <h2 className="font-extrabold text-[15px] uppercase leading-5 tracking-[0.75px]">
+                  Sport
+                </h2>
+              </div>
+            </div>
+
+            {/* News in more to explore */}
+            <div className="grid md:grid-cols-[3fr_1fr] grid-rows-[min-content_minmax(0,1fr)] gap-x-4 gap-y-8 max-w-7xl mx-auto w-full my-4">
+              {/* Main News */}
+              <div className="group order-1 md:order-0 grid md:grid-cols-[1fr_2fr] gap-4 leading-8">
+                {/* Heading */}
+                <div className="order-2 md:order-0 flex flex-col self-center gap-2 font-serif border-b border-border md:border-none">
+                  <h2 className="font-medium text-[28px] group-hover:underline">
+                    Australia&apos;s Hazlewood out of first Ashes Test
+                  </h2>
+
+                  <p className="leading-[18px] text-sm">
+                    Josh Hazlewood is ruled out of the first Ashes Test, leaving Australia&apos;s pace bowling seriously depleted for the series opener in Perth.
+                  </p>
+
+                  <div className="flex gap-2 items-center font-sans text-xs leading-3.5 text-muted h-8">
+                    <span>3 hrs ago</span>
+                    <span>|</span>
+                    <span>Australia</span>
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div>
+                  <Image
+                    alt="Split screen image showing James Landale on the right and a damaged multi-storey building in Kyiv on the left"
+                    src="/images/s-main.webp"
+                    className="order-1 md:order-0 w-full object-cover aspect-video group-hover:opacity-80"
+                    width={1024}
+                    height={576}
+                  />
+                </div>
+              </div>
+
+              {/* Side */}
+              <div className="row-span-2 order-3 md:order-0 flex flex-col gap-4">
+                {/* Featured (full width) */}
+                <NewsCard
+                  title="Eubank Jr v Benn 2 - big-fight predictions"
+                  description="Tony Bellew is backing the underdog, as the world of boxing gives their predictions for Chris Eubank Jr v Conor Benn 2."
+                  imageUrl="/images/s-side.webp"
+                  url="/"
+                  category="Boxing"
+                  publishedAt="2025-11-10T14:20:00Z"
+                  className="w-full"
+                />
+
+                {/* Two small cards (no image, side by side) */}
+                <div className="flex flex-col sm:flex-row md:flex-col gap-4">
+                  <NewsCard
+                    title="Why has Sweden's World Cup bid gone wrong and can Potter save them?"
+                    description="Graham Potter was appointed Sweden manager in October after spells at West Ham and Chelsea. Is he the perfect fit?"
+                    url="/"
+                    category="Sweden"
+                    publishedAt="2025-11-08T09:50:00Z"
+                    className="flex flex-col"
+                  />
+
+                  <NewsCard
+                    title="Will Scotland's luck hold for biggest test of World Cup dream?"
+                    description="Scotland are ideally positioned to qualify for the World Cup finals, but Steve Clarke's side now face the hardest part of their journey, writes Tom English."
+                    url="/"
+                    category="Football"
+                    publishedAt="2025-11-09T22:15:00Z"
+                    className="flex flex-col"
+                  />
+                </div>
+              </div>
+
+              {/* Below Main */}
+              <div className="grid grid-cols-1 gap-4 order-2 md:order-0 sm:grid-cols-2 lg:grid-cols-3">
+                <NewsCard
+                  title="All Black McKenzie sets example and challenge for ambitious England"
+                  description="England will have to find another level to edge out a team they have beaten only eight times in more than a century."
+                  imageUrl="/images/s-bottom-1.webp"
+                  url="/"
+                  category="England"
+                  publishedAt="2025-11-10T14:20:00Z"
+                />
+
+                <NewsCard
+                  title="Parker denies taking 'any prohibited substance'"
+                  description="Former world heavyweight champion Joseph Parker denies taking 'any prohibited substance' after testing positive for cocaine."
+                  imageUrl="/images/s-bottom-2.webp"
+                  url="/"
+                  category="Boxing"
+                  publishedAt="2025-11-10T14:20:00Z"
+                />
+
+                <div className="sm:col-span-2 lg:col-span-1">
+                  <NewsCard
+                    title="Thomas to miss start of 2026 after back operation"
+                    description="Two-time major winner Justin Thomas is sidelined after back surgery and 'will miss some events in the beginning of 2026'."
+                    imageUrl="/images/s-bottom-3.webp"
+                    url="/"
+                    category="England"
+                    className="sm:col-span-2"
+                    publishedAt="2025-11-10T04:20:00Z"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
     </>
