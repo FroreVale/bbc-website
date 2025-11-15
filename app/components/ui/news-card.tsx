@@ -19,19 +19,31 @@ export default function NewsCard({
 }: Props) {
   return (
     <Link href={url}>
-      <div className={cn("flex flex-col gap-3 group border-b border-border", className)}>
+      <div
+        className={cn(
+          "grid grid-cols-[132px_1fr] sm:flex sm:flex-col gap-3 group border-b border-border pb-2",
+          className
+        )}
+      >
         {imageUrl && (
-          <Image
-            alt={`${title}-news-image`}
-            src={imageUrl}
-            width={1600}
-            height={900}
-            className="aspect-video w-full object-cover group-hover:opacity-80"
-          />
+          <div className="aspect-video w-[132px] sm:w-full relative">
+            <Image
+              alt={`${title}-news-image`}
+              src={imageUrl}
+              fill
+              className="object-cover group-hover:opacity-80"
+            />
+          </div>
         )}
         <div className="flex flex-col gap-3 font-serif">
-          <h2 className="group-hover:underline font-medium leading-[22px] text-lg">{title}</h2>
-          {description && <p className="text-sm leading-[18px]">{description}</p>}
+          <h2 className="group-hover:underline font-medium leading-[22px] text-lg">
+            {title}
+          </h2>
+          {description && (
+            <p className="hidden sm:block text-sm leading-[18px]">
+              {description}
+            </p>
+          )}
 
           {publishedAt && category && (
             <div className="flex gap-2 items-center font-sans text-xs leading-3.5 text-muted h-8">

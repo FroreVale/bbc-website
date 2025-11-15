@@ -10,7 +10,6 @@ import Link from "next/link";
 import CategoryButton from "./components/ui/catetory-button";
 import Image from "next/image";
 import LiveIcon from "./components/icons/liveIcon";
-import { sideNews } from "@/app/data/sideNews";
 import NewsCard from "@/app/components/ui/news-card";
 import { bottomNews } from "./data/bottonNews";
 
@@ -98,12 +97,10 @@ export default function Home() {
 
           {/* Breaking News */}
           <div className="grid md:grid-cols-[3fr_1fr] grid-rows-[min-content_minmax(0,1fr)] gap-x-4 gap-y-8 max-w-7xl mx-auto w-full px-4">
-            
             {/* Main News */}
-            <div className="group grid md:grid-cols-[1fr_2fr] gap-4 leading-8">
-
+            <div className="group order-1 md:order-0 grid md:grid-cols-[1fr_2fr] gap-4 leading-8">
               {/* Heading */}
-              <div className="order-2 md:order-0 flex flex-col gap-2 font-serif">
+              <div className="order-2 md:order-0 flex flex-col gap-2 font-serif border-b border-border md:border-none">
                 <div>
                   <div className="flex items-center float-left gap-1">
                     <LiveIcon className="w-[26.7] h-[26.7] text-red-600 " />
@@ -116,7 +113,7 @@ export default function Home() {
                     messages about Trump &apos;prove nothing&apos;
                   </h1>
                 </div>
-                <p className="leading-[18px] text-sm">
+                <p className="leading-[18px] text-sm mb-4">
                   Jeffrey Epstein said in 2018 he could &quot;take down&quot;
                   Donald Trump, in an exchange released along with thousands of
                   other files.
@@ -136,22 +133,42 @@ export default function Home() {
             </div>
 
             {/* Side */}
-            <div className="row-span-2 flex flex-col gap-4">
-              {sideNews.map((news) => (
+            <div className="row-span-2 order-3 md:order-0 flex flex-col gap-4">
+              {/* Featured (full width) */}
+              <NewsCard
+                title="'Astonishingly lethal': BBC reports from site of Russian strike in Kyiv"
+                description="The BBC's James Landale reports from the east of the capital where a drone struck a multi-storey residential building."
+                imageUrl="/images/side-1.webp"
+                url="/"
+                category="Europe"
+                publishedAt="2025-11-10T14:20:00Z"
+                className="w-full"
+              />
+
+              {/* Two small cards (no image, side by side) */}
+              <div className="flex flex-col sm:flex-row md:flex-col gap-4">
                 <NewsCard
-                  key={news.id}
-                  title={news.title}
-                  imageUrl={news.imageUrl}
-                  url={news.url}
-                  description={news.description}
-                  category={news.category}
-                  publishedAt={news.publishedAt}
+                  title="Germany agrees new military service plan to boost troop numbers"
+                  description="The new military service plan will mandate all 18-year-old men to fill out a questionnaire on their suitability to serve."
+                  url="/"
+                  category="Europe"
+                  publishedAt="2025-11-08T09:50:00Z"
+                  className="flex flex-col"
                 />
-              ))}
+
+                <NewsCard
+                  title="Dozens of Australian and NZ schools shut over asbestos risk in children's sand"
+                  description="The Australian regulator has recalled several sand products used by children for play, but says the risk from them is 'low'."
+                  url="/"
+                  category="Australia"
+                  publishedAt="2025-11-09T22:15:00Z"
+                  className="flex flex-col"
+                />
+              </div>
             </div>
 
             {/* Below Main */}
-            <div className="lg:flex grid grid-cols-2 gap-4">
+            <div className="flex flex-col gap-4 order-2 sm:grid sm:grid-cols-2 md:order-0 lg:flex lg:flex-row">
               {bottomNews.map((news) => (
                 <NewsCard
                   key={news.id}
