@@ -7,6 +7,7 @@
   --border: #e6e8ea;
   --muted: #545658;
   --hr: #3a3c3e;
+  --numbered-bullet: #8a8c8e;
 }
 
 @theme inline {
@@ -16,6 +17,7 @@
   --color-border: var(--border);
   --color-muted: var(--muted);
   --color-hr: var(--hr);
+  --color-numbered-bullet: var(--numbered-bullet);
 
   /* Fonts */
   --font-sans: var(--font-reith-sans);

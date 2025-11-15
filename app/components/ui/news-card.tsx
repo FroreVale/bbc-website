@@ -40,7 +40,7 @@ export default function NewsCard({
             {title}
           </h2>
           {description && (
-            <p className="hidden sm:block text-sm leading-[18px]">
+            <p className={`text-sm leading-[18px] ${imageUrl ? "hidden sm:block" : ""}`}>
               {description}
             </p>
           )}
