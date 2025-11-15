@@ -12,6 +12,7 @@ import Image from "next/image";
 import LiveIcon from "./components/icons/liveIcon";
 import NewsCard from "@/app/components/ui/news-card";
 import { bottomNews } from "./data/bottonNews";
+import PlayIcon from "./components/icons/playIcon";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -89,14 +90,14 @@ export default function Home() {
 
       {/* Main Body */}
       <main className="pt-20 md:pt-[125px] bg-background">
-        <div className="min-h-[1000px]">
+        <div className="min-h-[10000px] px-4">
           {/* News Heading */}
           <div className="text-center text-4xl font-bold py-4 text-red-700">
             NEWS
           </div>
 
           {/* Breaking News */}
-          <div className="grid md:grid-cols-[3fr_1fr] grid-rows-[min-content_minmax(0,1fr)] gap-x-4 gap-y-8 max-w-7xl mx-auto w-full px-4">
+          <div className="grid md:grid-cols-[3fr_1fr] grid-rows-[min-content_minmax(0,1fr)] gap-x-4 gap-y-8 max-w-7xl mx-auto w-full">
             {/* Main News */}
             <div className="group order-1 md:order-0 grid md:grid-cols-[1fr_2fr] gap-4 leading-8">
               {/* Heading */}
@@ -136,11 +137,11 @@ export default function Home() {
             <div className="row-span-2 order-3 md:order-0 flex flex-col gap-4">
               {/* Featured (full width) */}
               <NewsCard
-                title="'Astonishingly lethal': BBC reports from site of Russian strike in Kyiv"
-                description="The BBC's James Landale reports from the east of the capital where a drone struck a multi-storey residential building."
+                title="Trump rolls back tariffs on dozens of food products"
+                description="The executive order allowing products like coffee and bananas to escape tariffs comes as the Trump administration faces mounting pressure over rising prices."
                 imageUrl="/images/side-1.webp"
                 url="/"
-                category="Europe"
+                category="US & Canada"
                 publishedAt="2025-11-10T14:20:00Z"
                 className="w-full"
               />
@@ -182,6 +183,47 @@ export default function Home() {
               ))}
             </div>
           </div>
+
+          {/* Minor News */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 font-serif my-12">
+            {/* Heading with play button */}
+            <div className="group pb-4 border-b border-border sm:border-none">
+              <div className="float-left mr-1.5">
+                <PlayIcon className="w-[18.3px] h-[18.3px]" />
+              </div>
+              <h2 className="group-hover:underline font-medium leading-[22px] text-lg">
+                Watch: Mud volcano erupts in southern Taiwan
+              </h2>
+            </div>
+            <h2 className="hover:underline font-medium leading-[22px] text-lg pb-4 border-b border-border sm:border-none">
+              Emails highlight Jeffrey Epstein and Steve Bannon relationship
+            </h2>
+            <h2 className="hover:underline font-medium leading-[22px] text-lg pb-4 border-b border-border sm:border-none">
+              Ex-Bangladesh leader charged with crimes against humanity wants
+              vote ban lifted
+            </h2>
+            <h2 className="hover:underline font-medium leading-[22px] text-lg pb-4 border-b border-border sm:border-none">
+              Record settler attacks in West Bank opening up rifts within Israel
+            </h2>
+            <h2 className="hover:underline font-medium leading-[22px] text-lg pb-4 border-b border-border sm:border-none">
+              Mass killings probe in Sudan will hold culprits to account, vows
+              UN
+            </h2>
+          </div>
+
+          {/* More to explore */}
+          <section className="my-12">
+            {/* Header */}
+            <div>
+              <hr className="h-0.5 w-full bg-hr" />
+
+              <div className="flex mt-2">
+                <h2 className="font-extrabold text-[15px] uppercase leading-5 tracking-[0.75px]">
+                  More to explore
+                </h2>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
     </>

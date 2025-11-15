@@ -5,7 +5,8 @@
   --primary: #000000;
   --secondary: #202224;
   --border: #e6e8ea;
-  --muted: #545658
+  --muted: #545658;
+  --hr: #3a3c3e;
 }
 
 @theme inline {
@@ -14,6 +15,9 @@
   --color-secondary: var(--secondary);
   --color-border: var(--border);
   --color-muted: var(--muted);
+  --color-hr: var(--hr);
+
+  /* Fonts */
   --font-sans: var(--font-reith-sans);
   --font-serif: var(--font-reith-serif);
 }
