@@ -13,6 +13,7 @@ import LiveIcon from "./components/icons/liveIcon";
 import NewsCard from "@/app/components/ui/news-card";
 import PlayIcon from "./components/icons/playIcon";
 import { mostWatched } from "./data/most-watched";
+import { mostRead } from "./data/most-read";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -507,6 +508,41 @@ export default function Home() {
                   />
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* Most Read */}
+          <section className="my-12 max-w-7xl mx-auto">
+            {/* Header */}
+            <div className="mb-6">
+              <hr className="h-0.5 w-full bg-hr" />
+              <div className="flex mt-2">
+                <h2 className="font-extrabold text-[15px] uppercase leading-5 tracking-[0.75px]">
+                  Most Read
+                </h2>
+              </div>
+            </div>
+
+            {/* List of most watched */}
+            <div className="grid grid-flow-col sm:grid-cols-2 sm:grid-rows-5 xl:grid-cols-5 xl:grid-rows-2 font-serif gap-6 sm:gap-4 m-4">
+              {mostRead.map(({ id, title }) => {
+                return (
+                  <div
+                    key={id}
+                    className="grid grid-cols-[38px_1fr] gap-2 group"
+                  >
+                    <div className="flex justify-center items-start">
+                      <span className="text-[32px] leading-8 text-numbered-bullet">
+                        {id}
+                      </span>
+                    </div>
+
+                    <h2 className="font-medium leading-5 group-hover:underline">
+                      {title}
+                    </h2>
+                  </div>
+                );
+              })}
             </div>
           </section>
         </div>
